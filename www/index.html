@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<!--<html manifest="cache.manifest"> -->
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+	<!-- iOS Settings -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon-precomposed" href="media/icon.png"/>
+	<!-- /iOS Settings -->
+	<title>Time Captain</title>	
+	<script type='application/javascript' src='js/fastclick.js'></script>
+	
+	<script src="js/lib/jquery-1.8.2.min.js"></script>	
+	<script src="js/lib/jquery.mobile-1.2.0.min.js"></script>
+	<script src="js/lib/jquery.counter.js"></script>
+	<script src="js/lib/ticktoo.simpleClock.js"></script>	
+	
+	<script src="js/mobilescroll/mobiscroll.core-2.4.js" type="text/javascript"></script>
+	<script src="js/mobilescroll/mobiscroll.core-2.4-de.js" type="text/javascript"></script>
+	<link href="css/mobilescroll/mobiscroll.core-2.4.css" rel="stylesheet" type="text/css" /> 	
+	<script src="js/mobilescroll/mobiscroll.ios-2.4.js" type="text/javascript"></script>	
+	<link href="css/mobilescroll/mobiscroll.ios-2.4.css" rel="stylesheet" type="text/css" />	
+	<script src="js/mobilescroll/mobiscroll.datetime-2.4.js" type="text/javascript"></script>
+	<script src="js/mobilescroll/mobiscroll.datetime-2.4-de.js" type="text/javascript"></script>
+	<script src="js/mobilescroll/mobiscroll.select-2.4.min.js" type="text/javascript"></script>
+
+
+	
+	<script src="js/init.js"></script>
+	<script src="js/tools.js"></script>
+	<script src="js/main.js"></script>
+	
+
+	
+	<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="css/jquery.counter-analog2.css" />
+	<link rel="stylesheet" href="css/basic.css" />
+	<link rel="stylesheet" href="css/mobiscroll.select-2.4.min.css" />
+
+	</head>
+	
+	<body> 
+
+		
+		<div  data-role="page" id="page_1">
+			<div data-role="header" ><h1>Time Captain - Startseite</h1></div>
+			<div class="content" data-role="content">			
+				<div id="counter"></div>
+				<div id="blinker_container"><span id="blinker">:</span></div>
+				<div id="clock"><span id="date"></span><span id="time"></span></div>
+				
+
+
+					
+					<form id="testform" >
+						<select name="select_customer_page_1" id="select_customer_page_1"  data-role="none"  style="position: relative !important; width: 300px !important;"><option value="">Kunden</option></select>
+						<select name="select_project_page_1" id="select_project_page_1"  data-role="none"  style="position: relative !important; width: 300px !important;"><option value="">Projekte</option></select>
+						<select name="select_activity_page_1" id="select_activity_page_1"  data-role="none"  style="position: relative !important; width: 300px !important;"><option value="">Projekte</option></select>
+		            </form>
+
+			<!-- 	<div data-role="fieldcontain">
+				    <fieldset data-role="controlgroup">
+				        <select name="select_customer_page_1" id="select_customer_page_1" ><option>Kunde</option></select>
+				        <select name="select_project_page_1" id="select_project_page_1" data-native-menu="false"><option>Projekt</option></select>
+				        <select name="select_activity_page_1" id="select_activity_page_1" data-native-menu="false"><option>Tätigkeit</option></select>
+			</fieldset>  
+			
+				</div> -->
+				
+				<br>
+				<a href="" id="start_stop_button" data-role="button" data-theme="a" style=" height: 80px !important;  line-height: 60px !important;">Start</a>
+			</div>
+			
+			
+			
+			<div data-role="footer" data-id="foo1" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+					<li style="width: 23% !important"><a href="#page_1" data-role="button" data-transition="none"  class="ui-btn-active ui-state-persist" >Startseite</a></li>
+					<li style="width: 27% !important"><a href="#page_2" data-role="button" data-transition="none" >Aufnahmen</a></li>
+					<li style="width: 33% !important"><a href="#page_4" data-role="button" data-transition="none" >Einstellungen</a></li>
+					<li style="width: 17% !important"><a href="#page_5" data-role="button" data-transition="none">Info</a></li>
+					</ul>
+				</div>
+				
+				
+				
+			</div><!-- /footer -->
+			
+		</div><!-- Ende Seite 1 -->
+		
+		
+		<div  data-role="page" id="page_2">
+			<div data-role="header"><a href="#page_1" data-icon="back" data-transition="none">Zurück</a><h1>TimeCaptain - Aufnahmen</h1></div>
+			<div class="content" data-role="content">
+				<h2>Alle Aufnahmen</h2><br><br>
+				
+				<div id="show_all_records" style="font-size: 10px !important;"><ul data-role="listview" id="list_off_all_records" style="font-size: 10px !important;"></ul><br><br></div>
+
+				<a href="" id="delete_all_button" data-role="button">Alle Aufnahmen löschen</a>
+			</div>
+			<div data-role="footer" data-id="foo1" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li style="width: 23% !important"><a href="#page_1" data-role="button" data-transition="none" >Startseite</a></li>
+						<li style="width: 27% !important"><a href="#page_2" data-role="button" data-transition="none" class="ui-btn-active ui-state-persist">Aufnahmen</a></li>
+						<li style="width: 33% !important"><a href="#page_4" data-role="button" data-transition="none" >Einstellungen</a></li>
+						<li style="width: 17% !important"><a href="#page_5" data-role="button" data-transition="none">Info</a></li>
+					</ul>
+				</div>
+				
+			</div><!-- /footer -->
+		</div><!-- Ende Seite 2 -->
+		
+		<div  data-role="page" id="page_3">
+			<div data-role="header"><a href="#page_2" data-icon="back" data-transition="none">Zurück</a><h1>TimeCaptain - Einzelansicht</h1></div>
+			<div class="content" data-role="content">
+				<div id="single_view"></div>
+				<form id="testform" >
+					<select name="select_customer_single_view" id="select_customer_single_view"  data-role="none"  style="position: relative !important; width: 300px !important;"><option value="">Kunden</option></select>
+					<select name="select_project_single_view" id="select_project_single_view"  data-role="none"  style="position: relative !important; width: 300px !important;"><option value="">Projekte</option></select>
+					<select name="select_activity_single_view" id="select_activity_single_view"  data-role="none"  style="position: relative !important; width: 300px !important;"><option value="">Projekte</option></select>
+	            </form>
+				<a data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="flip" href="#page_4">Ändern</a>
+				</div>
+				<div data-role="footer" data-id="foo1" data-position="fixed">
+					<div data-role="navbar">
+						<ul>
+							<li style="width: 23% !important"><a href="#page_1" data-role="button" data-transition="none" >Startseite</a></li>
+							<li style="width: 27% !important"><a href="#page_2" data-role="button" data-transition="none" class="ui-btn-active ui-state-persist">Aufnahmen</a></li>
+							<li style="width: 33% !important"><a href="#page_4" data-role="button" data-transition="none" >Einstellungen</a></li>
+							<li style="width: 17% !important"><a href="#page_5" data-role="button" data-transition="none">Info</a></li>
+						</ul>
+					</div><!-- /navbar -->
+				</div><!-- /footer -->
+		</div>
+		
+		<div  data-role="page" id="page_4">
+			<div data-role="header"><h1>TimeCaptain - Einstellungen</h1></div>
+			<div class="content" data-role="content">
+				
+					Einstellungen
+				
+			</div>
+			<div data-role="footer" data-id="foo1" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li style="width: 23% !important"><a href="#page_1" data-role="button" data-transition="none" >Startseite</a></li>
+						<li style="width: 27% !important"><a href="#page_2" data-role="button" data-transition="none" >Aufnahmen</a></li>
+						<li style="width: 33% !important"><a href="#page_4" data-role="button" data-transition="none" class="ui-btn-active ui-state-persist">Einstellungen</a></li>
+						<li style="width: 17% !important"><a href="#page_5" data-role="button" data-transition="none">Info</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div>
+		
+		<div  data-role="page" id="page_5">
+			<div data-role="header"><h1>TimeCaptain - Info</h1></div>
+			<div class="content" data-role="content">
+				
+					Info
+				
+			</div>
+			<div data-role="footer" data-id="foo1" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li style="width: 23% !important"><a href="#page_1" data-role="button" data-transition="none" >Startseite</a></li>
+						<li style="width: 27% !important"><a href="#page_2" data-role="button" data-transition="none" >Aufnahmen</a></li>
+						<li style="width: 33% !important"><a href="#page_4" data-role="button" data-transition="none" >Einstellungen</a></li>
+						<li style="width: 17% !important"><a href="#page_5" data-role="button" data-transition="none" class="ui-btn-active ui-state-persist">Info</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+			
+
+	</body>
+	</html>                                                                                   
